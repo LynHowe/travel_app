@@ -14,7 +14,7 @@ export default {
   @import '~@/assets/styles/variable.styl'
   .search
     margin-top: -.02rem
-    padding: .1rem .2rem
+    padding: 0 .36rem .1rem .2rem
     background: $bgColor
     height: .7rem
     .search-input
