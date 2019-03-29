@@ -4,7 +4,7 @@
     <ul>
       <li
         class="item-wrapper border-bottom"
-        v-for="item of recommendList"
+        v-for="item of list"
         :key="item.id"
       >
         <img class="item-img" :src="item.imgUrl">
@@ -21,25 +21,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [{
-        id: '001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1707/fb/fb0f814e1be3312a3.water.jpg_200x200_47548f58.jpg',
-        title: '自然之门',
-        desc: '浪漫的大连首站，浪漫的海洋注意乐园'
-      }, {
-        id: '002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1603/3b/3b0a34d3984b4ac590.water.jpg_200x200_4fa25893.jpg',
-        title: '南澳岛',
-        desc: '风景秀丽，海鲜种类众多，环境优美，海天一色'
-      }, {
-        id: '003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1512/62/628c1e85c1d00e3590.water.jpg_200x200_cf118541.jpg',
-        title: '丹樱生态园',
-        desc: '百花盛开，鸟语花香，富有林园气息，恬静悠然'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 
