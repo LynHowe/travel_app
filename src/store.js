@@ -5,10 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-
+    city: '广州'
   },
   mutations: {
-
+    changeCity (state, city) {
+      state.city = city
+    }
   },
   actions: {
 

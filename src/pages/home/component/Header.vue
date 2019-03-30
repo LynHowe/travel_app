@@ -9,7 +9,7 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{city}}
+        {{this.$store.state.city}}
         <span class="iconfont arrow-icon">&#xe64a;</span>
       </div>
     </router-link>
@@ -29,6 +29,7 @@ export default {
 <style lang='stylus' scoped>
   @import '~@/assets/styles/variable.styl'
   .header
+    touch-action: none
     display: flex
     line-height: $headerHeight
     background: $bgColor

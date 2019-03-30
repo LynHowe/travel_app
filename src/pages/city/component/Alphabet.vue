@@ -70,6 +70,7 @@ export default {
 <style lang='stylus' scoped>
   @import '~@/assets/styles/variable.styl'
   .list
+    touch-action: none
     width: .46rem
     position: absolute
     right: 0

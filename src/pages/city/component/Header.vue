@@ -23,6 +23,7 @@ export default {
 <style lang='stylus' scoped>
   @import '~@/assets/styles/variable.styl'
   .header
+    touch-action: none
     position: relative
     text-align: center
     height: $headerHeight
