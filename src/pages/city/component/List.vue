@@ -89,4 +89,6 @@ export default {
     .item
       line-height: .76rem
       padding-left: .2rem
+      color: #666
+      background: #fff
 </style>
