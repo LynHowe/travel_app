@@ -1,18 +1,16 @@
 <template>
   <div>
     <city-header></city-header>
-    <city-search></city-search>
+    <city-search :cities="cities"></city-search>
     <city-list
       :hot="hotCities"
       :cities="cities"
       :alphabet="alphabet"
-    >
-    </city-list>
+    ></city-list>
     <city-alphabet
-    :cities="cities"
-    @change="handleAlphabetChange"
-    >
-    </city-alphabet>
+      :cities="cities"
+      @change="handleAlphabetChange"
+    ></city-alphabet>
   </div>
 </template>
 
@@ -39,6 +37,9 @@ export default {
     }
   },
   methods: {
+    handleAlphabetChange (e) {
+      this.alphabet = e
+    },
     getCityInfo () {
       axios.get('https://easy-mock.com/mock/5c9dfe43fcc8741fc1eba4ee/api/cityinfo')
         .then(this.getCityInfosucc)
@@ -50,9 +51,6 @@ export default {
         this.hotCities = data.hotCities
         this.cities = data.cities
       }
-    },
-    handleAlphabetChange (e) {
-      this.alphabet = e
     }
   },
   mounted () {
