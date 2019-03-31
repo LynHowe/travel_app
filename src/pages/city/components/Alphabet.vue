@@ -70,7 +70,6 @@ export default {
 <style lang='stylus' scoped>
   @import '~@/assets/styles/variable.styl'
   .list
-    touch-action: none
     width: .46rem
     position: absolute
     right: 0
@@ -80,7 +79,7 @@ export default {
     flex-direction: column
     justify-content: center
     .item
-      line-height: .44rem
+      line-height: .3rem
       color: $bgColor
       text-align: center
 </style>

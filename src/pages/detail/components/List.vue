@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      v-for="(item, index) of tipList"
+      v-for="(item, index) of list"
       :key="index"
       class="list border-bottom"
     >
@@ -10,7 +10,7 @@
         {{item.type}}
       </div>
       <div v-if="item.branch" class="list-child">
-        <detail-list :tipList="item.branch"></detail-list>
+        <detail-list :list="item.branch"></detail-list>
       </div>
     </div>
   </div>
@@ -20,7 +20,7 @@
 export default {
   name: 'DetailList',
   props: {
-    tipList: Array
+    list: Array
   }
 }
 
