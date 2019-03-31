@@ -34,14 +34,13 @@ export default {
         let opacity = top / 140
         opacity = opacity > 1 ? 1 : opacity
         this.opacityStyle = { opacity }
-        this.showHeader = false          
+        this.showHeader = false
       } else {
         this.showHeader = true
       }
     }
   },
   activated () {
-    console.log('aaa')
     window.addEventListener('scroll', this.handleScroll)
   },
   deactivated () {
