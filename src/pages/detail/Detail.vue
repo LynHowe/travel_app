@@ -1,9 +1,13 @@
 <template>
   <div>
-    <detail-banner></detail-banner>
+    <detail-banner
+      :sightName="sightName"
+      :bannerImg="bannerImg"
+      :gallaryImgs="gallaryImgs"
+    ></detail-banner>
     <detail-header></detail-header>
     <div class="content">
-      <detail-list :tipList="list"></detail-list>
+      <detail-list :list="categoryList"></detail-list>
     </div>
   </div>
 </template>
@@ -12,6 +16,7 @@
 import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
+import axios from 'axios'
 
 export default {
   name: 'Detail',
@@ -22,44 +27,33 @@ export default {
   },
   data () {
     return {
-      list: [{
-        type: '成人票',
-        branch: [{
-          type: '成人故宫前庭票',
-          branch: [{
-            type: '前殿票'
-          }, {
-            type: '侧殿票'
-          }]
-        }, {
-          type: '成人故宫后宫票'
-        }]
-      }, {
-        type: '学生票',
-        branch: [{
-          type: '学生故宫前庭票',
-          branch: [{
-            type: '前殿票'
-          }, {
-            type: '侧殿票'
-          }]
-        }, {
-          type: '学生故宫后宫票'
-        }]
-      }, {
-        type: '儿童票',
-        branch: [{
-          type: '学生故宫前庭票',
-          branch: [{
-            type: '前殿票'
-          }, {
-            type: '侧殿票'
-          }]
-        }, {
-          type: '学生故宫后宫票'
-        }]
-      }]
+      sightName: '',
+      bannerImg: '',
+      gallaryImgs: [],
+      categoryList: []
     }
+  },
+  methods: {
+    getDetailInfo () {
+      axios.get('https://easy-mock.com/mock/5c9dfe43fcc8741fc1eba4ee/api/detailinfo', {
+        params: {
+          id: this.$route.params.id
+        }
+      }).then(this.getDetailInfosucc)
+    },
+    getDetailInfosucc (res) {
+      res = res.data
+      if (res.ret && res.data) {
+        const data = res.data
+        this.sightName = data.sightName
+        this.bannerImg = data.bannerImg
+        this.gallaryImgs = data.gallaryImgs
+        this.categoryList = data.categoryList
+      }
+    }
+  },
+  mounted () {
+    return this.getDetailInfo()
   }
 }
 

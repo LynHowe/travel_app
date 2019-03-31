@@ -1,5 +1,5 @@
 <template>
-  <div ref="">
+  <div>
     <div class="search">
       <input
         type="text"

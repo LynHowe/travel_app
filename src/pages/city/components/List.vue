@@ -87,7 +87,6 @@ export default {
     &:before
       border-color: #ccc
   .list
-    touch-action: none
     overflow: hidden
     position: absolute
     top: 1.58rem
