@@ -51,7 +51,7 @@ export default {
     position: relative
     overflow: hidden
     height: 0
-    padding-bottom: 50%
+    padding-bottom: 55%
     .banner-img
       width:100%
     .banner-wrapper
