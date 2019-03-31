@@ -68,6 +68,7 @@ export default {
       text-align: center
       font-size: .4rem
   .header
+    z-index: 2
     touch-action: none
     position: fixed
     top: 0
