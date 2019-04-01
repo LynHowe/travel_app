@@ -1,16 +1,19 @@
 <template>
   <div>
-    <router-link tag="div" to="/" class="btn" v-show="showHeader">
+    <div class="btn" v-show="showHeader" @click="removeEvent">
       <div class="iconfont btn-back">&#xe624;</div>
-    </router-link>
+    </div>
     <div
       class="header"
       v-show="!showHeader"
       :style="opacityStyle"
     >
-      <router-link tag="div" to="/" class="icon-wrapper">
-        <div class="iconfont icon-back">&#xe624;</div>
-      </router-link>
+      <div class="icon-wrapper">
+        <div
+          class="iconfont icon-back"
+          @click="removeEvent"
+        >&#xe624;</div>
+      </div>
       <div class="header-title">景点详情</div>
     </div>
   </div>
@@ -38,13 +41,14 @@ export default {
       } else {
         this.showHeader = true
       }
+    },
+    removeEvent () {
+      window.removeEventListener('scroll', this.handleScroll)
+      this.$router.push('/')
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
-  },
-  deactivated () {
-    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="detail">
     <detail-banner
       :sightName="sightName"
       :bannerImg="bannerImg"
@@ -60,6 +60,8 @@ export default {
 </script>
 
 <style lang='stylus' scoped>
-  .content
-    height: 20rem
+  .detail
+    position: relative
+    .content
+      height: 20rem
 </style>

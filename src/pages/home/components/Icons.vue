@@ -54,7 +54,7 @@ export default {
     padding-bottom: 50%
   .icons
     margin: .1rem 0
-    touch-action: none
+    touch-action: pan-y
     .icon-border
       position: relative
       float: left
