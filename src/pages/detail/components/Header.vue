@@ -34,8 +34,8 @@ export default {
     handleScroll () {
       const top = document.documentElement.scrollTop
       if (top > 40) {
-        let opacity = top / 140
-        opacity = opacity > 1 ? 1 : opacity
+        let opacity = top / 120
+        opacity = opacity > 0.8 ? 0.8 : opacity
         this.opacityStyle = { opacity }
         this.showHeader = false
       } else {
