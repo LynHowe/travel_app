@@ -10,21 +10,27 @@
         </div>
       </div>
     </div>
-    <common-gallery
-      :galleryImgs="gallaryImgs"
-      v-show="galleryShow"
-      @hidden="handleGalleryHidden"
-    ></common-gallery>
+    <common-animation>
+      <template #animation>
+        <common-gallery
+          :galleryImgs="gallaryImgs"
+          v-show="galleryShow"
+          @hidden="handleGalleryHidden"
+        ></common-gallery>
+      </template>
+    </common-animation>
   </div>
 </template>
 
 <script>
 import CommonGallery from '@/common/gallery/Gallery'
+import CommonAnimation from '@/common/animation/Animation'
 
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallery
+    CommonGallery,
+    CommonAnimation
   },
   props: {
     sightName: String,
