@@ -48,7 +48,7 @@ export default {
     handleTouchMove (e) {
       if (this.touchState) {
         if (this.timer) {
-          clearTimeout(this.time)
+          clearTimeout(this.timer)
         }
         this.timer = setTimeout(() => {
           const touchY = e.touches[0].clientY - 79
