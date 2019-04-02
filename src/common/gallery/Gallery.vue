@@ -2,10 +2,7 @@
   <div class="gallery" @click="handleGalleryhidden">
     <div class="img-wrapper">
       <swiper  :options="swiperOption">
-        <swiper-slide
-          v-for="(item, index) of galleryImgs"
-          :key="index"
-        >
+        <swiper-slide v-for="(item, index) of galleryImgs" :key="index">
           <img class="img" :src="item">
         </swiper-slide>
         <div class="swiper-pagination"  slot="pagination"></div>

@@ -1,10 +1,6 @@
 <template>
   <div>
-    <div
-      v-for="(item, index) of list"
-      :key="index"
-      class="list border-bottom"
-    >
+    <div v-for="(item, index) of list" :key="index" class="list border-bottom">
       <div class="tip">
         <span class="icon"></span>
         {{item.type}}

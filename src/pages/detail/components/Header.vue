@@ -3,11 +3,7 @@
     <div class="btn" v-show="showHeader" @click="removeEvent">
       <div class="iconfont btn-back">&#xe624;</div>
     </div>
-    <div
-      class="header"
-      v-show="!showHeader"
-      :style="opacityStyle"
-    >
+    <div class="header" v-show="!showHeader" :style="opacityStyle">
       <div class="icon-wrapper">
         <div
           class="iconfont icon-back"
